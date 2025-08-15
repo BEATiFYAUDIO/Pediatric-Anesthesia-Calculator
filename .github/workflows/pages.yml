@@ -18,7 +18,9 @@ jobs:
         with:
           node-version: 20
       - run: npm ci
-      - run: npm run build
+      # Force the correct base for project pages
+      - run: npm run build -- --base=/Pediatric-Anesthesia-Calculator/
+      # SPA fallback so client-side routes work on Pages
       - run: cp dist/index.html dist/404.html
       - uses: actions/upload-pages-artifact@v3
         with:
