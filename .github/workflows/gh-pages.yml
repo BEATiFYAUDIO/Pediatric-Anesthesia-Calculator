@@ -2,8 +2,9 @@ name: Deploy via gh-pages branch
 on:
   push:
     branches: [main]
+  workflow_dispatch: {}   # lets you click “Run workflow” in the UI
 permissions:
-  contents: write   # needed to push to gh-pages
+  contents: write         # needed to push to gh-pages
 jobs:
   deploy:
     runs-on: ubuntu-latest
